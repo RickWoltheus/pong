@@ -14,11 +14,16 @@ package actors
 	public class Ball extends MovieClip 
 	{
 		private var _movement:Point;
+		public var ballspeed:Number = 15;
 		public static const OUTSIDE_RIGHT:String = "outside right";
 		public static const OUTSIDE_LEFT:String = "outside left";
 		public function set movement(m:Point):void
 		{
 			_movement = m;
+		}
+		public function get movement():Point
+		{
+			return _movement;
 		}
 		public function get xMove():Number
 		{
@@ -39,7 +44,7 @@ package actors
 		private function init(e:Event):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
-			addChild(new BallArt());
+			addChild(new newball());
 			movement = new Point(0, 0);
 			this.addEventListener(Event.ENTER_FRAME, loop);
 		}
@@ -55,9 +60,9 @@ package actors
 		
 		private function restart(e:TimerEvent):void 
 		{
-			_movement = MovementCalculator.calculateMovement(15 + Math.random() * 10, Math.random() * 360);
-			if (_movement.x > 0 && _movement.x < 2) _movement.x += 2;
-			if (_movement.x < 0 && _movement.x > -2) _movement.x -= 2;
+			_movement = MovementCalculator.calculateMovement(ballspeed + Math.random() * 20, Math.random() * 360);
+			if (_movement.x > 0 && _movement.x < 3) _movement.x += 3;
+			if (_movement.x < 0 && _movement.x > -3) _movement.x -= 3;
 		}
 		private function loop(e:Event):void 
 		{

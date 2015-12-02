@@ -18,11 +18,17 @@ package screens
 	 */
 	public class GameScreen extends Screen
 	{
+		private var maxSpeed:Number = 30;
 		private var balls:Array = [];
 		private var paddles:Array = [];
 		private var scoreboard:Scoreboard;
 		static public const GAME_OVER:String = "game over";
 		static public const BALL_BOUNCE:String = "ballBounce";
+		
+		public function  maxSpeed()
+		{
+			maxSpeed
+		}
 		public function GameScreen() 
 		{
 			this.addEventListener(Event.ADDED_TO_STAGE, init);			
@@ -30,7 +36,7 @@ package screens
 		private function init(e:Event):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
-				for (var i:int = 0; i < 2; i++) 
+				for (var i:int = 0; i < 1; i++) 
 			{
 				balls.push(new Ball());
 				addChild(balls[i]);
@@ -42,6 +48,7 @@ package screens
 			}	
 			paddles.push(new AI());
 			paddles.push(new Player());
+			paddles[1].addEventListener("fired", timestop)
 			paddles[0].balls = balls;
 			for (i = 0; i < 2; i++) 
 			{
@@ -59,6 +66,18 @@ package screens
 			this.addEventListener(Event.ENTER_FRAME, loop);
 		}		
 		
+		private function timestop(e:Event):void 
+		{
+			for (var k:int = 0; k < balls.length; k++)
+			{
+				balls[k].movement.x /= 1.2;
+				balls[k].movement.y /= 1.2;
+				
+				
+			}
+			 
+		}
+		
 		private function loop(e:Event):void 
 		{
 			checkCollision();
@@ -71,7 +90,7 @@ package screens
 				{
 					if (paddles[j].hitTestObject(balls[i]))
 					{
-						balls[i].xMove *= -1;
+						balls[i].xMove *= -1.02;
 						balls[i].x += balls[i].xMove / 2;
 						
 						dispatchEvent(new Event(BALL_BOUNCE));

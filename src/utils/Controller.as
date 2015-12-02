@@ -55,7 +55,7 @@ package utils
 					_down = false;
 					break;
 				case _fireKeyCode:
-					_fire = false;
+					_fire = false ;
 					break;
 				default:
 						

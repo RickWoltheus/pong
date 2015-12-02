@@ -59,7 +59,11 @@ package sounds
 			else
 			{			
 				var transform:SoundTransform = new SoundTransform(volume, pan);
-				_channel = _sounds[index].play(0,loops);
+				_channel = _sounds[index].play(0, loops);
+				if(_channel != null){
+				
+					_channel.soundTransform = transform;
+				}
 			}			
 		}	
 		
