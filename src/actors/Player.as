@@ -21,6 +21,13 @@ package actors
 			controller = new Controller(stage);
 			this.addEventListener(Event.ENTER_FRAME, loop);			
 		}
+		/*public function set MAXSPEED(a:Number)
+		{
+			if (MAXSPEED < speed)
+			{
+		     speed = 30;
+			}
+		}*/
 		private function loop(e:Event):void 
 		{
 			if (controller.up)

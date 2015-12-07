@@ -17,6 +17,7 @@ package
 		private var introScreen:IntroScreen;
 		private var gameOverScreen:GameOverScreen;
 		private var soundPlayer:SoundPlayer;
+		private var backgroundArt:BackgroundArt;
 		
 		public function Main() 
 		{
@@ -29,9 +30,15 @@ package
 			// entry point			
 			soundPlayer = new SoundPlayer(this);
 			buildIntroSreen();	
+			
+		
+			
+			
 		}
 		private function buildIntroSreen():void
 		{			
+			backgroundArt = new BackgroundArt();
+			addChild(backgroundArt);
 			introScreen = new IntroScreen();
 			addChild(introScreen);
 			introScreen.addEventListener(IntroScreen.START_GAME, startGame);

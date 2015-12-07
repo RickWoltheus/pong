@@ -61,8 +61,8 @@ package actors
 		private function restart(e:TimerEvent):void 
 		{
 			_movement = MovementCalculator.calculateMovement(ballspeed + Math.random() * 20, Math.random() * 360);
-			if (_movement.x > 0 && _movement.x < 3) _movement.x += 3;
-			if (_movement.x < 0 && _movement.x > -3) _movement.x -= 3;
+			if (_movement.x > 1 && _movement.x < 3) _movement.x += 3;
+			if (_movement.x < 1 && _movement.x > -3) _movement.x -= 3;
 		}
 		private function loop(e:Event):void 
 		{

@@ -25,12 +25,13 @@ package screens
 		static public const GAME_OVER:String = "game over";
 		static public const BALL_BOUNCE:String = "ballBounce";
 		
-		public function  maxSpeed()
+		/*public function set MAXSPEED(speed:Number)
 		{
-			maxSpeed
-		}
+		 playermax = MAXSPEED;
+		}*/
 		public function GameScreen() 
 		{
+			//MAXSPEED = 45;
 			this.addEventListener(Event.ADDED_TO_STAGE, init);			
 		}				
 		private function init(e:Event):void 
@@ -41,14 +42,13 @@ package screens
 				balls.push(new Ball());
 				addChild(balls[i]);
 				balls[i].reset();
-				
 				balls[i].addEventListener(Ball.OUTSIDE_RIGHT, onRightOut);
 				balls[i].addEventListener(Ball.OUTSIDE_LEFT, onLeftOut);
 				
 			}	
 			paddles.push(new AI());
 			paddles.push(new Player());
-			paddles[1].addEventListener("fired", timestop)
+			paddles[1].addEventListener("fired", timestop);
 			paddles[0].balls = balls;
 			for (i = 0; i < 2; i++) 
 			{
