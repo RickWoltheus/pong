@@ -63,7 +63,8 @@ package utils
 			}
 		}		
 		private function onDown(e:KeyboardEvent):void 
-		{			
+		{		
+			
 			switch(e.keyCode)
 			{
 				case _upKeyCode:

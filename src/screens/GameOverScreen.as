@@ -15,6 +15,7 @@ package screens
 	{
 		private var title:TextField;
 		private var timer:Timer;
+		private var easterEgg;
 		public static const RESET:String = "reset";
 		public function GameOverScreen() 
 		{
@@ -66,7 +67,9 @@ package screens
 				dispatchEvent(new Event(RESET));
 				
 			}
-		
+		    if (e.keyCode == 90) {
+			   
+			}
 		}
 		
 	}
