@@ -29,7 +29,7 @@ package screens
 						
 			title = new TextField();
 			title.embedFonts = true;
-			title.text = "game over";
+			title.text = "druk op spatie om opnieuw te beginnen";
 			title.autoSize = TextFieldAutoSize.CENTER;			
 			title.setTextFormat(textFormat);		
 			

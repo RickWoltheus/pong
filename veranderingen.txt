@@ -1,18 +1,18 @@
 http://18701.hosts.ma-cloud.nl/bewijzenmap/FOP/periode2/portofolio/index.html
 
 
-ik was te laat inleveren omdat het bestand veel te groot was. er was een fla file die boven de 2 gigabytes was en het was na de inlever datum opgelost
+ik heb niet via github kunnen inleveren dus hierbij via een zip
 
 alle veranderingen
--pong heeft een nieuw thema miley cyrus
--snelheid van de ball word meer na contact
+
+-snelheid word meer na contact
 -op spatie gaat de ball langzamer (grote toevoeging)
 -de snelheid van de ai is verminderd
 -de snelheid van player is verminderd
 -er kan nog maar 1 ball op het veld aanwezig zijn
 -de richtingen van de ball zijn iets aangepast
 -kleine bugfixes
--de game heeft een nieuwe background
+-de game heeft een nieuwe bacckground
 -de paddles hebben nieuwe art
 -de ball heeft nieuwe art met een roterend effect
 -alle geluiden zijn aangepast
